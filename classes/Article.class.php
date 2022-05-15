@@ -7,13 +7,15 @@
 		public $contenu;
 		public $continent;
 		public $date;
+		public $image;
 
-		public function __construct($id,$titre,$contenu,$continent,$date){
+		public function __construct($id,$titre,$contenu,$continent,$date,$image){
 			$this->setid($id);
 			$this->setTitre($titre);
 			$this->setContenu($contenu);
 			$this->setContinent($continent);
 			$this->setDate($date);
+			$this->setImage($image);
 		}
 
 		public function setId($id){
@@ -54,6 +56,14 @@
 
 		public function getDate(){
 			return $this->_date;
+		}
+
+		public function setImage($image){
+			$this->_image=$image;
+		}
+
+		public function getImage(){
+			return $this->_image;
 		}
 	}
 ?>

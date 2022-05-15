@@ -1,3 +1,10 @@
+<?php
+require_once('../incs/function.php');
+require_once('../incs/connexion.php');
+require_once('../incs/chargerClasse.php');
+$latest_article = get_latest_article();
+
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
