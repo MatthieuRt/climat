@@ -56,6 +56,7 @@
 
 	function get_latest_article(){
 		$dbh = dbconnect();
+
 		$articles = array();
 		$sql = "SELECT * FROM articles group by date asc limit 1";
 		$resultats = $dbh->query($sql);
@@ -110,6 +111,32 @@
 		$dbh = dbconnect();
 		$articles = array();
 		$sql = "SELECT * FROM articles where continent = 'Europe'";
+		$resultats = $dbh->query($sql);
+		$resultats->setFetchMode(PDO::FETCH_OBJ);
+		while($row = $resultats->fetch()){
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date);
+		}
+		$resultats->closeCursor();
+		return $articles;
+	}
+
+	function get_Namerica_articles(){
+		$dbh = dbconnect();
+		$articles = array();
+		$sql = "SELECT * FROM articles where continent = 'Amerique du Nord'";
+		$resultats = $dbh->query($sql);
+		$resultats->setFetchMode(PDO::FETCH_OBJ);
+		while($row = $resultats->fetch()){
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date);
+		}
+		$resultats->closeCursor();
+		return $articles;
+	}
+
+	function get_Samerica_articles(){
+		$dbh = dbconnect();
+		$articles = array();
+		$sql = "SELECT * FROM articles where continent = 'Amerique du Sud'";
 		$resultats = $dbh->query($sql);
 		$resultats->setFetchMode(PDO::FETCH_OBJ);
 		while($row = $resultats->fetch()){
