@@ -4,21 +4,12 @@
 
 	
 
-	function insert_random($random){
-		$dbh=dbconnect();
-
-		$sql="INSERT INTO random VALUES('%d')";
-		$sql=sprintf($sql,$random);
-
-		$dbh->exec($sql);
-	}
-
 
 	function test_login($username,$password){
 		$dbh=dbconnect();
 		$result=true;
 
-		$sql="SELECT * FROM client WHERE nom_client='%s' AND password=sha1('%s')";
+		$sql="SELECT * FROM admin WHERE username='%s' AND password=sha1('%s')";
 		$sql=sprintf($sql,$username,$password);
 		$resultats=$dbh->prepare($sql);
 		$resultats->execute();
@@ -32,12 +23,29 @@
 		return $result;
 	}
 
-	function register_client($nom_client,$email,$password){
+
+	function insert_article($titre,$contenu,$continent,$date,$image){
 		$dbh=dbconnect();
 
-		$sql="INSERT INTO client VALUES('0','%s','%s',sha1('%s'))";
-		$sql=sprintf($sql,$nom_client,$email,$password);
+
+		$sql="INSERT INTO article VALUES('0','%s','%s','%s','%s','%s')";
+		$sql=sprintf($sql,$titre,$contenu,$continent,$date,$image);
 		$dbh->exec($sql);
+	}
+
+	function get_article($id){
+		$dbh = dbconnect();
+		$articles = array();
+		$sql = "SELECT * FROM articles where id='%d'";
+		$sql = sprintf($sql,$id);
+		$resultats = $dbh->query($sql);
+		$resultats->setFetchMode(PDO::FETCH_OBJ);
+		while($row = $resultats->fetch()){
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date,$row->image);
+		}
+		$resultats->closeCursor();
+		
+		return $articles;
 	}
 
 	function get_articles(){
@@ -75,7 +83,7 @@
 		$resultats = $dbh->query($sql);
 		$resultats->setFetchMode(PDO::FETCH_OBJ);
 		while($row = $resultats->fetch()){
-			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date);
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date,$row->image);
 		}
 		$resultats->closeCursor();
 		return $articles;
@@ -88,7 +96,7 @@
 		$resultats = $dbh->query($sql);
 		$resultats->setFetchMode(PDO::FETCH_OBJ);
 		while($row = $resultats->fetch()){
-			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date);
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date,$row->image);
 		}
 		$resultats->closeCursor();
 		return $articles;
@@ -101,7 +109,7 @@
 		$resultats = $dbh->query($sql);
 		$resultats->setFetchMode(PDO::FETCH_OBJ);
 		while($row = $resultats->fetch()){
-			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date);
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date,$row->image);
 		}
 		$resultats->closeCursor();
 		return $articles;
@@ -114,7 +122,7 @@
 		$resultats = $dbh->query($sql);
 		$resultats->setFetchMode(PDO::FETCH_OBJ);
 		while($row = $resultats->fetch()){
-			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date);
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date,$row->image);
 		}
 		$resultats->closeCursor();
 		return $articles;
@@ -127,7 +135,7 @@
 		$resultats = $dbh->query($sql);
 		$resultats->setFetchMode(PDO::FETCH_OBJ);
 		while($row = $resultats->fetch()){
-			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date);
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date,$row->image);
 		}
 		$resultats->closeCursor();
 		return $articles;
@@ -140,7 +148,7 @@
 		$resultats = $dbh->query($sql);
 		$resultats->setFetchMode(PDO::FETCH_OBJ);
 		while($row = $resultats->fetch()){
-			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date);
+			$articles[]=new Article($row->id,$row->titre,$row->contenu,$row->continent,$row->date,$row->image);
 		}
 		$resultats->closeCursor();
 		return $articles;

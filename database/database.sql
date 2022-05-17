@@ -7,6 +7,24 @@ CREATE TABLE articles(
 	image varchar(50)
 );
 
+CREATE TABLE breve(
+	id int primary key auto_increment,
+	titre varchar(100),
+	contenu varchar(1000),
+	date date,
+	image varchar(100)
+);
+
+CREATE TABLE admin(
+	id int primary key auto_increment,
+	username varchar(255),
+	password varchar(255)
+);
+
+
+
+insert into admin values (0,'admin@gmail.com',sha1('password'));
+
 insert into articles values (0,'Le changement climatique entraîne une augmentation de l’insécurité alimentaire, de la pauvreté et des déplacements en Afrique','L’évolution du régime des précipitations, la hausse des températures et l’augmentation des phénomènes météorologiques extrêmes ont contribué à aggraver l’insécurité alimentaire, la pauvreté et les déplacements de population en Afrique en 2020, ce qui n’a fait qu’accentuer la crise socio-économique et sanitaire déclenchée par la pandémie de COVID-19, selon un nouveau rapport multi‑institutions coordonné par l’Organisation météorologique mondiale','Afrique','2022-05-15','images/afrique1.jpg');
 insert into articles values (0,'L Afrique est la plus touchée par les effets du changement climatique, selon la COP26.','L’Afrique continue d’être l’un des continents les plus durement touchés par les conséquences du changement climatique, bien qu’elle émette les plus faibles niveaux de gaz à effet de serre à l’origine de ses impacts. La dernière prédiction en date est la disparition des derniers glaciers d’Afrique.','Afrique','2022-03-12','images/afrique2.jpg');
 insert into articles values (0,'Le changement climatique est déjà une réalité pour des millions de personnes en Afrique','À Saint-Louis, une ville du Sénégal baignée par l’Atlantique, le changement climatique est tout ce qu’il y a de concret, le phénomène touchant déjà ses habitants au quotidien. Des centaines d’entre eux ont dû fuir les effets dévastateurs de l’élévation du niveau de la mer et de l’érosion, renonçant à leurs moyens de subsistance, leurs rêves et leurs perspectives.','Afrique','2022-04-12','images/afrique3.jpg');

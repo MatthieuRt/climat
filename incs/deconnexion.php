@@ -5,6 +5,6 @@
 	require_once('../incs/function.php');
 
 	session_destroy();
-	header('Location: ../index.php');
+	header('Location: ../connection');
 
 ?>
