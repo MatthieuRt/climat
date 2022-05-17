@@ -13,7 +13,7 @@ $article = get_article($_GET['id']);
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title></title>
-        <meta name="description" content="Site d'actualité sur le rechauffement climatique">
+        <meta name="description" content="Site web d'actualité sur le rechauffement climatique">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="manifest" href="site.webmanifest">
