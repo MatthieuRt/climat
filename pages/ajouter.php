@@ -12,15 +12,10 @@ require_once('../incs/chargerClasse.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords"
-        content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Ample lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Ample admin lite dashboard bootstrap 5 dashboard template">
-    <meta name="description"
-        content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
-    <meta name="robots" content="noindex,nofollow">
-    <title>Back office</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    
+    <title>Rechauffement climatique</title>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+   
 
    <link href="css/style.min.css" rel="stylesheet">
 
@@ -42,21 +37,13 @@ require_once('../incs/chargerClasse.php');
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin6">
 
-                    <a class="navbar-brand" href="dashboard.html">
-
-                        <b class="logo-icon">
-     
-                            <img src="plugins/images/logo-icon.png" alt="homepage" />
-                        </b>
-  
+                    <a class="navbar-brand" href="">
                         <span class="logo-text">
-
-                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                            <img src="assets/img/images/download.png" width=200 height=50 alt="homepage" />
                         </span>
                     </a>
  
-                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
-                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    
                 </div>
 
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
